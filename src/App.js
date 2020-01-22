@@ -5,7 +5,10 @@ function App() {
     <div className="App">
       <h1>Pomodoro Clock</h1>
       <div id="break-label">
-        <p>Break label</p>
+        <p>Break length</p>
+      </div>
+      <div id="session-label">
+        <p>Session length</p>
       </div>
     </div>
   );
