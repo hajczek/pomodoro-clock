@@ -20,6 +20,10 @@ function App() {
         <h3>Session</h3>
         <p id="time-left">mm:ss</p>
       </div>
+      <div id="timer-control">
+        <button id="start_stop">Start/Stop</button>
+        <button id="reset">Reset</button>
+      </div>
     </div>
   );
 }
