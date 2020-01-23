@@ -16,6 +16,10 @@ function App() {
         <span id="session-length">25</span>
         <button id="session-increment">+</button>
       </div>
+      <div id="timer-label">
+        <h3>Session</h3>
+        <p id="time-left">mm:ss</p>
+      </div>
     </div>
   );
 }
