@@ -5,9 +5,20 @@ class App extends Component {
     super(props);
     this.state = {
       breakLength: 5,
-      session: 25
+      session: 25,
+      sessionSet: 25
     };
   }
+
+  setSession = () => {
+    const d = new Date();
+    let minutes = Number(this.state.session);
+    d.setMinutes(minutes);
+    let sessionSet = d.getMinutes();
+    this.setState = {
+      sessionSet: sessionSet
+    };
+  };
 
   render() {
     return (
@@ -27,7 +38,7 @@ class App extends Component {
         </div>
         <div id="timer-label">
           <h3>Session</h3>
-          <p id="time-left">{this.state.session}</p>
+          <p id="time-left">{this.state.sessionSet}</p>
         </div>
         <div id="timer-control">
           <button id="start_stop">Start/Stop</button>
