@@ -24,25 +24,39 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Pomodoro Clock</h1>
-        <div id="break-label">
+        <div class="box" id="break-label">
           <p>Break length</p>
-          <button id="break-decrement">-</button>
+          <button class="btn-small" id="break-decrement">
+            -
+          </button>
           <span id="break-length">{this.state.breakLength}</span>
-          <button id="break-increment">+</button>
+          <button class="btn-small" id="break-increment">
+            +
+          </button>
         </div>
-        <div id="session-label">
+        <div class="box" id="session-label">
           <p>Session length</p>
-          <button id="session-decrement">-</button>
+          <button class="btn-small" id="session-decrement">
+            -
+          </button>
           <span id="session-length">{this.state.session}</span>
-          <button id="session-increment">+</button>
+          <button class="btn-small" id="session-increment">
+            +
+          </button>
         </div>
-        <div id="timer-label">
+        <div class="box" id="timer-label">
           <h3>Session</h3>
-          <p id="time-left">{this.state.sessionSet}</p>
+          <p class="time" id="time-left">
+            {this.state.sessionSet}
+          </p>
         </div>
-        <div id="timer-control">
-          <button id="start_stop">Start/Stop</button>
-          <button id="reset">Reset</button>
+        <div class="box" id="timer-control">
+          <button class="btn-big" id="start_stop">
+            Start/Stop
+          </button>
+          <button class="btn-big" id="reset">
+            Reset
+          </button>
         </div>
       </div>
     );
