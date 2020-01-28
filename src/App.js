@@ -12,11 +12,9 @@ class App extends Component {
 
   setSession = () => {
     const d = new Date();
-    let minutes = Number(this.state.session);
-    d.setMinutes(minutes);
-    let sessionSet = d.getMinutes();
+    d.setMinutes(d.getMinutes() + this.state.sessionSet);
     this.setState = {
-      sessionSet: sessionSet
+      sessionSet: d.getTime()
     };
   };
 
