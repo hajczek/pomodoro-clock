@@ -15,6 +15,12 @@ class App extends Component {
     });
   };
 
+  sessionIncrement = () => {
+    this.setState({
+      session: this.state.session + 1
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -39,7 +45,11 @@ class App extends Component {
             -
           </button>
           <span id="session-length">{this.state.session}</span>
-          <button className="btn-small" id="session-increment">
+          <button
+            className="btn-small"
+            id="session-increment"
+            onClick={this.sessionIncrement}
+          >
             +
           </button>
         </div>
