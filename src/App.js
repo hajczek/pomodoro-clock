@@ -4,7 +4,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      breakLength: 5,
+      break: 5,
       session: 25
     };
   }
@@ -21,16 +21,26 @@ class App extends Component {
     });
   };
 
+  breakDecrement = () => {
+    this.setState({
+      break: this.state.break - 1
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>Pomodoro Clock</h1>
         <div className="box" id="break-label">
           <p>Break length</p>
-          <button className="btn-small" id="break-decrement">
+          <button
+            className="btn-small"
+            id="break-decrement"
+            onClick={this.breakDecrement}
+          >
             -
           </button>
-          <span id="break-length">{this.state.breakLength}</span>
+          <span id="break-length">{this.state.break}</span>
           <button className="btn-small" id="break-increment">
             +
           </button>
