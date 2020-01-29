@@ -27,6 +27,12 @@ class App extends Component {
     });
   };
 
+  breakIncrement = () => {
+    this.setState({
+      break: this.state.break + 1
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -41,7 +47,11 @@ class App extends Component {
             -
           </button>
           <span id="break-length">{this.state.break}</span>
-          <button className="btn-small" id="break-increment">
+          <button
+            className="btn-small"
+            id="break-increment"
+            onClick={this.breakIncrement}
+          >
             +
           </button>
         </div>
