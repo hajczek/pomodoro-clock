@@ -33,6 +33,13 @@ class App extends Component {
     });
   };
 
+  resetState = () => {
+    this.setState({
+      break: 5,
+      session: 25
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -83,7 +90,7 @@ class App extends Component {
           <button className="btn-big" id="start_stop">
             Start/Stop
           </button>
-          <button className="btn-big" id="reset">
+          <button className="btn-big" id="reset" onClick={this.resetState}>
             Reset
           </button>
         </div>
