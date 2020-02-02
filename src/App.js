@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import ReactTimeout from "react-timeout";
+
+let then = new Date();
 
 class App extends Component {
   constructor(props) {
@@ -40,7 +43,36 @@ class App extends Component {
     });
   };
 
+  countDown = () => {
+    let now = new Date();
+
+    let allTime = then.getTime();
+    let leftTime = now.getTime();
+
+    let currentTime = allTime - leftTime;
+
+    let sec = Math.floor(currentTime / 1000);
+    let min = Math.floor(sec / 60);
+
+    min %= 60;
+    sec %= 60;
+
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    document.getElementById("minutes").textContent = min;
+    document.getElementById("seconds").textContent = sec;
+
+    // setTimeout(this.countdDown, 1000);
+  };
+
+  handleClick = e => {
+    this.props.setTimeout(this.countDown, 1000);
+  };
+
   render() {
+    then.setMinutes(then.getMinutes() + this.state.session);
+    then.setSeconds(then.getSeconds() + 0);
     return (
       <div className="App">
         <h1>Pomodoro Clock</h1>
@@ -84,10 +116,16 @@ class App extends Component {
           <h3>Session</h3>
           <p className="time" id="time-left">
             {this.state.session}
+            <span id="minutes"></span>
+            <span id="seconds"></span>
           </p>
         </div>
         <div className="box" id="timer-control">
-          <button className="btn-big" id="start_stop">
+          <button
+            className="btn-big"
+            id="start_stop"
+            onClick={this.handleClick}
+          >
             Start/Stop
           </button>
           <button className="btn-big" id="reset" onClick={this.resetState}>
@@ -99,4 +137,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ReactTimeout(App);
