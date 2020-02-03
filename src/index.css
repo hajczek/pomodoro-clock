@@ -72,3 +72,8 @@ h3 {
 .box p.time {
   font-size: 2rem;
 }
+
+#minutes,
+#seconds {
+  padding: 0;
+}

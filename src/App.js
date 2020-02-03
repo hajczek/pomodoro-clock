@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       break: 5,
-      session: 25
+      session: 25,
+      seconds: "00"
     };
   }
 
@@ -39,7 +40,8 @@ class App extends Component {
   resetState = () => {
     this.setState({
       break: 5,
-      session: 25
+      session: 25,
+      seconds: "00"
     });
   };
 
@@ -115,9 +117,8 @@ class App extends Component {
         <div className="box" id="timer-label">
           <h3>Session</h3>
           <p className="time" id="time-left">
-            {this.state.session}
-            <span id="minutes"></span>
-            <span id="seconds"></span>
+            <span id="minutes">{this.state.session} </span>:
+            <span id="seconds"> {this.state.seconds}</span>
           </p>
         </div>
         <div className="box" id="timer-control">
