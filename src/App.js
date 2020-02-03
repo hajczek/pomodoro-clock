@@ -41,7 +41,7 @@ class App extends Component {
     this.setState({
       break: 5,
       session: 25,
-      seconds: "00"
+      seconds: 0
     });
   };
 
@@ -62,13 +62,9 @@ class App extends Component {
     min = min < 10 ? "0" + min : min;
     sec = sec < 10 ? "0" + sec : sec;
 
-    document.getElementById("minutes").textContent = min;
-    document.getElementById("seconds").textContent = sec;
+    document.getElementById("minutes").textContent = min + " ";
+    document.getElementById("seconds").textContent = " " + sec;
 
-    // setTimeout(this.countdDown, 1000);
-  };
-
-  handleClick = e => {
     this.props.setTimeout(this.countDown, 1000);
   };
 
@@ -122,11 +118,7 @@ class App extends Component {
           </p>
         </div>
         <div className="box" id="timer-control">
-          <button
-            className="btn-big"
-            id="start_stop"
-            onClick={this.handleClick}
-          >
+          <button className="btn-big" id="start_stop" onClick={this.countDown}>
             Start/Stop
           </button>
           <button className="btn-big" id="reset" onClick={this.resetState}>
