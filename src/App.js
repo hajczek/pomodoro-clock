@@ -14,27 +14,27 @@ class App extends Component {
   }
 
   sessionDecrement = () => {
-    this.setState({
-      session: this.state.session - 1
-    });
+    this.setState(prevState => ({
+      session: prevState.session - 1
+    }));
   };
 
   sessionIncrement = () => {
-    this.setState({
-      session: this.state.session + 1
-    });
+    this.setState(prevState => ({
+      session: prevState.session + 1
+    }));
   };
 
   breakDecrement = () => {
-    this.setState({
-      break: this.state.break - 1
-    });
+    this.setState(prevState => ({
+      break: prevState.break - 1
+    }));
   };
 
   breakIncrement = () => {
-    this.setState({
-      break: this.state.break + 1
-    });
+    this.setState(prevState => ({
+      break: prevState.break + 1
+    }));
   };
 
   resetState = () => {
